@@ -5,6 +5,7 @@ def get_user_name():
     """Ask the user for their name and return it."""
     name = input("Enter your name: ").strip()
 
+    """ if blank: default name is Friend"""
     if name == "":
         name = "Friend"
 
@@ -30,12 +31,20 @@ def choose_fortune(fortunes):
 
 def display_fortune():
     """Display the final fortune message to the user."""
+
+    """ getting the users name """
     name = get_user_name()
+
+    """ getting list of fortunes """
     fortunes = get_fortunes()
+
+    """ choosing random fortune """
     fortune = choose_fortune(fortunes)
 
     print()
     print("🔮 Fortune Teller 🔮")
+
+    """ printing the fortune message """
     print(f"{name}, your fortune is:")
     print(fortune)
 
